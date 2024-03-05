@@ -1,11 +1,16 @@
+import { useLocalSearchParams } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { WebView } from 'react-native-webview';
+
 
 const HelpCenterScreen = () => {
+    const { url } = useLocalSearchParams<{url:string}>();
+    
     return (
-        <View>
-            <Text>HelpCenterScreen</Text>
-        </View>
+        <WebView
+            source={{ uri: url }}
+        />
     )
 }
 

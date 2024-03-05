@@ -5,7 +5,7 @@ import { colors } from "@/constants/colors";
 import { HingeIcon, StarIcon, HeartIcon, MessageIcon, PersonIcon } from "@/constants/icons";
 
 const TabLayout = () => {
-  return <Redirect href="../(auth)/signin" />;
+  return <Redirect href="../(auth)/sign-in" />;
   return (
     <Tabs
       screenOptions={({ route }) => ({

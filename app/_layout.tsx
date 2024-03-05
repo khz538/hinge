@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Slot, SplashScreen } from "expo-router";
 import { useFonts } from "expo-font";
 import { fonts } from '../constants/fonts';
+import { ThemeProvider, DefaultTheme } from "@react-navigation/native";
+import { colors } from "@/constants/colors";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -18,8 +20,18 @@ const AppLayout = () => {
     // Prevent rendering until the font has loaded or an error has occurred
     if (!(fontsLoaded || fontError)) return null;
 
+    const theme = {
+        ...DefaultTheme,
+        colors: {
+            ...DefaultTheme.colors,
+            background: colors.white,
+        }
+    }
+
     return (
-        <Slot />
+        <ThemeProvider value={theme}>
+            <Slot />
+        </ThemeProvider>
     )
 }
 

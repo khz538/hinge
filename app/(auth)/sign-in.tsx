@@ -46,13 +46,13 @@ const SignInScreen = () => {
                     </Type>
                 </View>
                 <Type variant="caption" color="white" textAlign="center">
-                    By tapping "Sign in" / "Create account", you agree to our
+                    By tapping "Sign in" / "Create account", you agree to our{' '}
                     <A href={links.terms}>
                         <Type variant="captionBold" color="white" textDecorationLine="underline">Terms of Service</Type>.
                     </A>
-                    Learn how we process your data in our
+                    {' '}Learn how we process your data in our{' '}
                     <A href={links.privacy}>
-                        <Type variant="captionBold" color="white" textDecorationLine="underline">Privacy Policy</Type> and
+                        <Type variant="captionBold" color="white" textDecorationLine="underline">Privacy Policy</Type> and{' '}
                     </A>
                     <A href={links.policy}>
                         <Type variant="captionBold" color="white" textDecorationLine="underline">Cookie Policy</Type>.
@@ -60,6 +60,13 @@ const SignInScreen = () => {
                 </Type>
                 <Spacer size={20} />
                 {!isSigningIn && (
+                    <Btn backgroundColor="primaryDark">
+                        <Type variant="bodyBold" color="white">
+                            Create account
+                        </Type>
+                    </Btn>
+                )}
+                {isSigningIn && (
                     <View style={styles.signin}>
                         <Btn backgroundColor="white" onPress={handleSignInWithApple} startIcon={<AppleIcon width={20} height={20} />}>
                             <Type variant="bodyBold" color="black">
@@ -81,7 +88,7 @@ const SignInScreen = () => {
                 <Spacer size={10} />
                 <Btn backgroundColor="transparent" onPress={handleSignIn}>
                     <Type variant="bodyBold" color="white">
-                        Sign In
+                        {isSigningIn ? "Back" : "Sign in"}
                     </Type>
                 </Btn>
             </SafeAreaView>
