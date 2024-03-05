@@ -50,6 +50,7 @@ const Btn = ({
                 []
               )}
         >
+            {startIcon && startIcon}
             {children}
         </MotiPressable>
     )
