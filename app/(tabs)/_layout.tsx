@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 import { colors } from "@/constants/colors";
 import { HingeIcon, StarIcon, HeartIcon, MessageIcon, PersonIcon } from "@/constants/icons";
 
 const TabLayout = () => {
+  return <Redirect href="../(auth)/signin" />;
   return (
     <Tabs
       screenOptions={({ route }) => ({
